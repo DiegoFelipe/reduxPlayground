@@ -1,22 +1,19 @@
 import { createSlice, configureStore } from "@reduxjs/toolkit";
 
-const initialState = {
-  conter: 0,
-  showCounter: true,
-};
+const initialState = { counter: 0, showCounter: true };
 
 const counterSlice = createSlice({
   name: "counter",
   initialState,
   reducers: {
     increment(state) {
-      state.conter++; // doesn't actually chage the state it seems to, because redux toolkit automatically fix it internally
+      state.counter++; // doesn't actually chage the state it seems to, because redux toolkit automatically fix it internally
     },
     decrement(state) {
       state.counter--;
     },
-    increase(state, payload) {
-      state.counter += payload;
+    increase(state, action) {
+      state.counter = state.counter + action.payload;
     },
     toggle(state) {
       state.showCounter = !state.showCounter;
@@ -25,9 +22,10 @@ const counterSlice = createSlice({
 });
 
 const store = configureStore({
-  reducer: {
-    counter: counterSlice.reducer,
-  },
+  reducer: counterSlice.reducer,
 });
+
+// counterSlice.actions creates unique identifiers for our actions like increment, decrement above, it's called action creators
+export const counterActions = counterSlice.actions;
 
 export default store;
