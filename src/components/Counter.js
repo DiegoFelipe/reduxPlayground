@@ -7,8 +7,8 @@ const Counter = () => {
   const dispatch = useDispatch();
   // useSelector automatically subscribes this components to the store
   // it means that whenever this state from store changes this component re-renders
-  const counter = useSelector((state) => state.counter);
-  const show = useSelector((state) => state.showCounter);
+  const counter = useSelector((state) => state.counter.counter);
+  const show = useSelector((state) => state.counter.showCounter);
 
   const toggleCounterHandler = () => {
     dispatch(counterActions.toggle());
