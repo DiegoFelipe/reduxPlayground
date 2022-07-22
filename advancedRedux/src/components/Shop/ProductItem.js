@@ -1,7 +1,7 @@
 import Card from "../UI/Card";
 import classes from "./ProductItem.module.css";
 
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { cartActions } from "../../store/slices/cart";
 
 const ProductItem = (props) => {
@@ -16,7 +16,7 @@ const ProductItem = (props) => {
         title,
       })
     );
-    // console.log(product);
+    // console.log(product); 261
   };
 
   return (
