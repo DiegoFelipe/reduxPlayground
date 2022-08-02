@@ -4,17 +4,17 @@ import QuoteList from "../components/quotes/QuoteList";
 const DUMMY_QUOTES = [
   {
     id: "q1",
-    author: "Diego",
+    author: "AAA Diego",
     text: "asds adasd asdas das dasda sdasd asdasdasdasd",
   },
   {
     id: "q2",
-    author: "Guga",
+    author: "BBB Guga",
     text: "bot asdoih asiodh asodh asdoi asidoasd",
   },
   {
     id: "q3",
-    author: "Diego",
+    author: "CCC Bot",
     text: "sdasdasd asas asdasdsd",
   },
 ];
