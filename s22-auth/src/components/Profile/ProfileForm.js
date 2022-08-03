@@ -2,10 +2,12 @@ import classes from "./ProfileForm.module.css";
 import { useContext, useRef } from "react";
 import AuthCtx from "../../store/auth-context";
 import { FIREBASE_KEY } from "../../consts/firebase";
+import { useHistory } from "react-router-dom";
 
 const ProfileForm = () => {
   const authContext = useContext(AuthCtx);
   const newPassRef = useRef();
+  const history = useHistory();
 
   const submitHandler = (event) => {
     event.preventDefault();
@@ -25,7 +27,7 @@ const ProfileForm = () => {
           "Content-Type": "application/json",
         },
       }
-    ).then((data) => console.log(data));
+    ).then((data) => history.replace("/"));
   };
   return (
     <form className={classes.form} onSubmit={submitHandler}>
